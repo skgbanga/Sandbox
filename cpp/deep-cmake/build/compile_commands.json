@@ -1,0 +1,13 @@
+[
+{
+  "directory": "/home/sandeep/Sandbox/cpp/deep-cmake/build",
+  "command": "/opt/vatic/bin/clang++   -isystem /home/sandeep/.conan/data/fmt/5.3.0/bincrafters/stable/package/64e0d548df6221cdd04e8d9f0e6ca9cd75dcef29/include    -g   -o CMakeFiles/main.dir/main.cpp.o -c /home/sandeep/Sandbox/cpp/deep-cmake/main.cpp",
+  "file": "/home/sandeep/Sandbox/cpp/deep-cmake/main.cpp"
+},
+
+{
+  "directory": "/home/sandeep/Sandbox/cpp/deep-cmake/build",
+  "command": "/opt/vatic/bin/clang++  -Dmylib_EXPORTS -isystem /home/sandeep/.conan/data/fmt/5.3.0/bincrafters/stable/package/64e0d548df6221cdd04e8d9f0e6ca9cd75dcef29/include    -g -fPIC   -o CMakeFiles/mylib.dir/mylib.cpp.o -c /home/sandeep/Sandbox/cpp/deep-cmake/mylib.cpp",
+  "file": "/home/sandeep/Sandbox/cpp/deep-cmake/mylib.cpp"
+}
+]

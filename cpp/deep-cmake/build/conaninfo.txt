@@ -1,0 +1,38 @@
+[settings]
+    arch=x86_64
+    build_type=Release
+    compiler=clang
+    compiler.libcxx=libstdc++11
+    compiler.version=10
+    os=Linux
+
+[requires]
+    fmt/5.Y.Z
+
+[options]
+
+
+[full_settings]
+    arch=x86_64
+    arch_build=x86_64
+    build_type=Release
+    compiler=clang
+    compiler.libcxx=libstdc++11
+    compiler.version=10
+    os=Linux
+    os_build=Linux
+
+[full_requires]
+    fmt/5.3.0@bincrafters/stable:64e0d548df6221cdd04e8d9f0e6ca9cd75dcef29
+
+[full_options]
+    fmt:fPIC=True
+    fmt:header_only=False
+    fmt:shared=False
+    fmt:with_fmt_alias=False
+
+[recipe_hash]
+
+
+[env]
+

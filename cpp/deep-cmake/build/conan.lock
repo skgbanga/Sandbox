@@ -1,0 +1,20 @@
+{
+ "profile_host": "[settings]\narch=x86_64\narch_build=x86_64\nbuild_type=Release\ncompiler=clang\ncompiler.libcxx=libstdc++11\ncompiler.version=10\nos=Linux\nos_build=Linux\n[options]\n[build_requires]\n[env]\n",
+ "graph_lock": {
+  "nodes": {
+   "0": {
+    "pref": null,
+    "options": "fmt:fPIC=True\nfmt:header_only=False\nfmt:shared=False\nfmt:with_fmt_alias=False",
+    "requires": {
+     "fmt/5.3.0@bincrafters/stable#0": "1"
+    },
+    "path": "/home/sandeep/Sandbox/cpp/deep-cmake/conanfile.txt"
+   },
+   "1": {
+    "pref": "fmt/5.3.0@bincrafters/stable#0:64e0d548df6221cdd04e8d9f0e6ca9cd75dcef29#ba622e2d039c6e9a48a7a9156d415918",
+    "options": "fPIC=True\nheader_only=False\nshared=False\nwith_fmt_alias=False"
+   }
+  }
+ },
+ "version": "0.2"
+}
