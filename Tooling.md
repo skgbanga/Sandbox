@@ -14,3 +14,12 @@ To see symbols
 
   - readelf
     - -s show symbols
+    - -a show the entire file (headers, symbols, sections)
+    - -x <section> show the hexdump of the section asked
+    - -W wide view (important to use with c++filt)
+
+
+Debugging
+  - gdb
+    - disassemble /m : show disassembly along with source code
+    - list: show the code to be executed

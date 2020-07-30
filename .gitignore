@@ -37,3 +37,4 @@
 # executables
 *a.out*
 .ipynb_checkpoints/
+build
