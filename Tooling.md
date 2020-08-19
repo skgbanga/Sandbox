@@ -31,3 +31,13 @@ Tools
 
   - hexedit (emac bindings)
     - 'Enter' -> search for address in hex
+
+  - perf (complete this section)
+    - stat
+    - annotate
+    - record
+    - report
+    - -e 'task-clock,cycles,instructions,cache-references,cache-misses,branches,branch-misses,faults,minor-faults,cs,migrations'
+    - -r 'n': repeat this many times
+
+  - taskset
