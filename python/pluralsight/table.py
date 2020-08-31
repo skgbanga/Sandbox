@@ -10,7 +10,7 @@ class Table:
 
         for col in self.data:
             for value in col:
-                m = max(m, len("{}".format(h)))
+                m = max(m, len("{}".format(value)))
 
         m = m + 2
 
