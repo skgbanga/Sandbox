@@ -4,6 +4,7 @@ class Table:
         self.data = data
 
     def __str__(self):
+        # find the max length which we are going to use print
         m = 0
         for h in self.header:
             m = max(m, len("{}".format(h)))
@@ -12,17 +13,20 @@ class Table:
             for value in col:
                 m = max(m, len("{}".format(value)))
 
-        m = m + 2
+        m = m + 2  # to center our values
 
+        # print header
         result = ""
         for h in self.header:
             result += "{:^{}}".format(h, m)
         result += "\n"
 
+        # print separator
         for _ in self.header:
             result += "{:^{}}".format("=" * (m - 2), m)
         result += "\n"
 
+        # print values
         for row in zip(*self.data):
             for r in row:
                 result += "{:^{}}".format(r, m)
