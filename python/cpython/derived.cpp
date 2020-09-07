@@ -5,6 +5,8 @@
 
 #include <Eigen/Dense>
 
+#include <chrono>
+#include <cstdio>
 #include <numeric>
 #include <vector>
 
@@ -65,6 +67,7 @@ Characters build() {
   return Characters{{1.0, 2.0}, {3.0, 4.0}};
 }
 
+// Eigen
 class Mordor {
  public:
   using matf =
@@ -80,7 +83,44 @@ Mordor evil() {
   return Mordor();
 }
 
+// np.array as input
+float sum(const std::vector<float>& nums) {
+  return std::accumulate(nums.begin(), nums.end(), 0);
+}
+
+namespace sc = std::chrono;
+
+std::pair<uint64_t, std::vector<float>> cumsum(py::array_t<float> nums) {
+  auto unchecked = nums.unchecked();
+  auto start = sc::high_resolution_clock::now();
+  const auto size = nums.size();
+  std::vector<float> result(size);
+  float sum = 0;
+  for (size_t i = 0; i < size; ++i) {
+    sum += unchecked[i];
+    result[i] = sum;
+  }
+  auto end = sc::high_resolution_clock::now();
+  auto taken = sc::duration_cast<sc::microseconds>(end - start);
+
+  return std::make_pair(taken.count(), std::move(result));
+}
+
+class Default {
+ public:
+  Default(int i = 10) : i_(i) {}
+
+ private:
+  int i_;
+};
+
+int add(std::optional<int> nums) {
+  return 10;
+}
+
 PYBIND11_MODULE(derived, m) {
+  m.def("add", &add);
+
   py::class_<Characters>(m, "characters")
       .def_property_readonly("hobbits", [](const Characters& c) {
         const auto& vec = c.hobbits;
@@ -104,4 +144,12 @@ PYBIND11_MODULE(derived, m) {
 
   py::class_<Mordor>(m, "mordor").def("orcs", &Mordor::orcs);
   m.def("evil", &evil);
+
+  m.def("sum", &sum);
+  py::class_<Default>(m, "Default").def(py::init<int>(), py::arg("i") = 10);
+
+  m.def("cumsum", [](py::array_t<float> nums) {
+    auto [taken, result] = cumsum(nums);
+    return std::make_pair(taken, as_pyarray(std::move(result)));
+  });
 }
