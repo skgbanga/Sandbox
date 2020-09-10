@@ -25,6 +25,10 @@ target_link_libraries(derived PRIVATE
   CONAN_PKG::pybind11
   CONAN_PKG::eigen
 )
+set_target_properties(derived
+  PROPERTIES
+  LIBRARY_OUTPUT_DIRECTORY ${CMAKE_CURRENT_LIST_DIR}/mylibs/
+)
 
 add_executable(foo
   foo.cpp
