@@ -1,6 +1,4 @@
 [requires]
-pybind11/2.5.0
-eigen/3.3.7
 
 [options]
 
