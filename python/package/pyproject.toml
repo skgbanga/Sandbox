@@ -10,6 +10,8 @@ packages = [
 
 [tool.poetry.dependencies]
 python = "^3.6"
+google-cloud-firestore = "^1.9.0"
+black = "^20.8b1"
 
 [tool.poetry.dev-dependencies]
 
