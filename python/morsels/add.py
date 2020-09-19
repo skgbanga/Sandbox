@@ -26,9 +26,7 @@ def add1(*matrices):
     return [[sum(elems) for elems in zip(*rows)] for rows in zip(*matrices)]
 
 
-# another clever solution
 from itertools import zip_longest
-
 
 def add2(*matrices):
     """Add corresponding numbers in given 2-D matrices."""
