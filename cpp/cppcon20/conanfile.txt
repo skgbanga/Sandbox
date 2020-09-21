@@ -1,0 +1,7 @@
+[requires]
+tbb/2020.2
+
+[options]
+
+[generators]
+cmake
