@@ -45,3 +45,33 @@ add_binary(pipeline_parallel
   02_oneTBB_algorithms/before/pipeline-parallel.cpp
   02_oneTBB_algorithms/common/case.cpp
 )
+
+# 05
+add_binary(split_default
+  05_oneTBB_controlling_max_concurrency/before/split-default.cpp
+)
+add_binary(scalability_gc
+  05_oneTBB_controlling_max_concurrency/before/scalability-gc.cpp
+)
+add_binary(scalability_gc_ta
+  05_oneTBB_controlling_max_concurrency/before/scalability-gc-ta.cpp
+)
+add_binary(split_unevenly
+  05_oneTBB_controlling_max_concurrency/before/split-unevenly.cpp
+)
+
+
+# 07
+add_binary(observer
+  07_oneTBB_observers/before/observer.cpp
+)
+
+
+# 10
+add_binary(mat_mul
+  10_oneTBB_composability/lab/mat_mul.cpp
+)
+target_link_libraries(mat_mul
+  CONAN_PKG::intel_mkl
+)
+

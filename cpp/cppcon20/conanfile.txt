@@ -1,5 +1,6 @@
 [requires]
 tbb/2020.2
+intel_mkl/2019.2@vatic/stable
 
 [options]
 
